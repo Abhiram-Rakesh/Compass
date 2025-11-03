@@ -2,7 +2,7 @@
 <% layout("/layouts/boilerplate.ejs") %>
     <script>
         const mapToken = "<%= process.env.MAP_TOKEN%>";
-        const coordinates = <%- JSON.stringify(listing.geometry.coordinates) %>;
+        const coordinates = <% - JSON.stringify(listing.geometry.coordinates) %>;
     </script>
 
     <body>
@@ -36,7 +36,7 @@
                 <form method="get" action="/listings/<%=listing._id%>/edit">
                     <button type="submit" class="btn btn-dark edit-btn md-5 show-btn">Edit</button>
                 </form>
-                <form method="post" action="http://localhost:8080/listings/<%=listing._id%>?_method=DELETE">
+                <form method="post" action="/listings/<%=listing._id%>?_method=DELETE">
                     <button type="submit" class="btn btn-dark md-5 show-btn">Delete</button>
                 </form>
             </div>
