@@ -33,7 +33,7 @@
         </div>
         <% if(currUser && listing.owner._id.equals(currUser._id)) { %>
             <div class="btns">
-                <form method="get" action="http://localhost:8080/listings/<%=listing._id%>/edit">
+                <form method="get" action="/listings/<%=listing._id%>/edit">
                     <button type="submit" class="btn btn-dark edit-btn md-5 show-btn">Edit</button>
                 </form>
                 <form method="post" action="http://localhost:8080/listings/<%=listing._id%>?_method=DELETE">
@@ -45,7 +45,7 @@
                 <div class="col-8 offset-3 mb-3">
                     <% if(currUser) {%>
                         <h4>Leave a Review</h4>
-                        <form method="post" action="http://localhost:8080/listings/<%= listing._id%>/reviews" novalidate
+                        <form method="post" action="/listings/<%= listing._id%>/reviews" novalidate
                             class="needs-validation">
                             <div class="mb-3 mt-3">
                                 <label for="rating" class="form-label">Rating</label>
@@ -93,7 +93,7 @@
                                     </div>
                                     <% if(currUser && review.author._id.equals(currUser._id)) { %>
                                         <form method="post"
-                                            action="http://localhost:8080/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE">
+                                            action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE">
                                             <button type="submit"
                                                 class="btn btn-sm btn-dark offset-10 mb-2">Delete</button>
                                         </form>
